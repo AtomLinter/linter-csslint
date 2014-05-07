@@ -1,0 +1,17 @@
+{
+  "name": "linter-csslint",
+  "keywords": ["csslint", "css", "linter", "lint"],
+  "main": "./lib/init",
+  "linter-package": true,
+  "version": "0.0.0",
+  "description": "A short description of your package",
+  "activationEvents": ["linter-csslint:toggle"],
+  "repository": "https://github.com/AtomLinter/linter-csslint",
+  "license": "MIT",
+  "engines": {
+    "atom": ">0.50.0"
+  },
+  "dependencies": {
+    "csslint": "~0.10.0"
+  }
+}
