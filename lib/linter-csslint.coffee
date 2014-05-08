@@ -1,8 +1,6 @@
 linterPath = atom.packages.getLoadedPackage("linter").path
 Linter = require "#{linterPath}/lib/linter"
 
-{ConfigObserver} = require 'atom'
-
 class LinterCsslint extends Linter
 
   # The syntax that the linter handles. May be a string or
