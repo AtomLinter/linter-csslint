@@ -9,7 +9,7 @@
   "main": "./lib/init",
   "linter-package": true,
   "version": "0.0.2",
-  "description": "A short description of your package",
+  "description": "Lint CSS on the fly, using csslint",
   "activationEvents": [
     "linter-csslint:toggle"
   ],
