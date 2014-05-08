@@ -8,7 +8,7 @@
   ],
   "main": "./lib/init",
   "linter-package": true,
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Lint CSS on the fly, using csslint",
   "activationEvents": [
     "linter-csslint:toggle"
