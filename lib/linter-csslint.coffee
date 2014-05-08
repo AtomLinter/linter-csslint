@@ -26,4 +26,7 @@ class LinterCsslint extends Linter
     atom.config.observe 'linter-csslint.csslintExecutablePath', =>
       @executablePath = atom.config.get 'linter-csslint.csslintExecutablePath'
 
+  destroy: ->
+    atom.config.unobserve 'linter-csslint.csslintExecutablePath'
+
 module.exports = LinterCsslint
