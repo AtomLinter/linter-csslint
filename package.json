@@ -8,7 +8,7 @@
   ],
   "main": "./lib/init",
   "linter-package": true,
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "Lint CSS on the fly, using csslint",
   "repository": "https://github.com/AtomLinter/linter-csslint",
   "license": "MIT",
