@@ -23,6 +23,8 @@ class LinterCsslint extends Linter
     '((?<error>Error)|(?<warning>Warning)) - (?<message>.*)'
 
   constructor: (editor)->
+    super(editor)
+
     atom.config.observe 'linter-csslint.csslintExecutablePath', =>
       @executablePath = atom.config.get 'linter-csslint.csslintExecutablePath'
 
