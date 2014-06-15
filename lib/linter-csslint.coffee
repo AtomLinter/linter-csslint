@@ -22,6 +22,8 @@ class LinterCsslint extends Linter
     '(line (?<line>\\d+), col (?<col>\\d+), )?' +
     '((?<error>Error)|(?<warning>Warning)) - (?<message>.*)'
 
+  isNodeExecutable: yes
+
   constructor: (editor)->
     super(editor)
 
