@@ -9,7 +9,7 @@ class LinterCsslint extends Linter
 
   # A string, list, tuple or callable that returns a string, list or tuple,
   # containing the command line (with arguments) used to lint.
-  cmd: 'csslint --format=compact'
+  cmd: ['csslint --format=compact']
 
   linterName: 'csslint'
 
@@ -27,10 +27,22 @@ class LinterCsslint extends Linter
   constructor: (editor)->
     super(editor)
 
-    atom.config.observe 'linter-csslint.csslintExecutablePath', =>
-      @executablePath = atom.config.get 'linter-csslint.csslintExecutablePath'
+    atom.config.observe 'linter-csslint.executablePath', =>
+      @executablePath = atom.config.get 'linter-csslint.executablePath'
+
+    atom.config.observe 'linter-csslint.ignore', =>
+      @updateCommand()
+
+  updateCommand: ->
+    ignore = atom.config.get 'linter-csslint.ignoreRules'
+
+    @cmd = ['csslint --format=compact']
+
+    if ignore and ignore.length > 0
+      @cmd.push " -ignore", ignore.toString()
 
   destroy: ->
-    atom.config.unobserve 'linter-csslint.csslintExecutablePath'
+    atom.config.unobserve 'linter-csslint.executablePath'
+    atom.config.unobserve 'linter-csslint.ignoreRules'
 
 module.exports = LinterCsslint
