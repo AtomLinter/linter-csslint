@@ -3,7 +3,7 @@ path = require 'path'
 module.exports =
   config:
     executablePath:
-      title: 'Csslint executable path'
+      title: 'CSS Lint executable path'
       description: 'Directory where executable csslint is located.'
       type: 'string'
       default: path.join __dirname, '..', 'node_modules', '.bin'

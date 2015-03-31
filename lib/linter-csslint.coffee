@@ -7,10 +7,6 @@ class LinterCsslint extends Linter
   # list/tuple of strings. Names should be all lowercase.
   @syntax: ['source.css', 'source.html']
 
-  # A string, list, tuple or callable that returns a string, list or tuple,
-  # containing the command line (with arguments) used to lint.
-  cmd: ['csslint --format=compact']
-
   linterName: 'csslint'
 
   # A regex pattern used to extract information from the executable's output.
@@ -30,12 +26,14 @@ class LinterCsslint extends Linter
     atom.config.observe 'linter-csslint.executablePath', =>
       @executablePath = atom.config.get 'linter-csslint.executablePath'
 
-    atom.config.observe 'linter-csslint.ignore', =>
+    atom.config.observe 'linter-csslint.ignoreRules', =>
       @updateCommand()
 
   updateCommand: ->
     ignore = atom.config.get 'linter-csslint.ignoreRules'
 
+    # A string, list, tuple or callable that returns a string, list or tuple,
+    # containing the command line (with arguments) used to lint.
     @cmd = ['csslint --format=compact']
 
     if ignore and ignore.length > 0
