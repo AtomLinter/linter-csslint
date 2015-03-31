@@ -15,7 +15,8 @@ $ apm install linter-csslint
 You can configure linter-csslint by editing ~/.atom/config.cson (choose Open Your Config in Atom menu):
 ```
 'linter-csslint':
-  'csslintExecutablePath': null #csslint path. run 'which csslint' to find the path
+  'executablePath': null # csslint path. run 'which csslint' to find the path
+  'ignoreRules': [] # Indicate which rules to ignore completely.
 ```
 
 ## Contributing
