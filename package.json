@@ -9,7 +9,7 @@
   "main": "./lib/init",
   "linter-package": true,
   "activationCommands": {},
-  "version": "0.0.11",
+  "version": "0.0.12",
   "description": "Lint CSS on the fly, using csslint",
   "repository": "https://github.com/AtomLinter/linter-csslint",
   "license": "MIT",
