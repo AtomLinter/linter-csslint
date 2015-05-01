@@ -8,7 +8,7 @@
   ],
   "main": "./lib/init",
   "linter-package": true,
-  "activationEvents": [],
+  "activationCommands": {},
   "version": "0.0.11",
   "description": "Lint CSS on the fly, using csslint",
   "repository": "https://github.com/AtomLinter/linter-csslint",
