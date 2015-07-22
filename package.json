@@ -6,16 +6,21 @@
     "linter",
     "lint"
   ],
-  "main": "./lib/init",
-  "linter-package": true,
-  "version": "0.0.14",
+  "main": "./lib/main",
+  "version": "0.0.15",
   "description": "Lint CSS on the fly, using csslint",
   "repository": "https://github.com/AtomLinter/linter-csslint",
   "license": "MIT",
-  "engines": {
-    "atom": ">0.50.0"
-  },
   "dependencies": {
-    "csslint": "~0.10.0"
+    "csslint": "~0.10.0",
+    "atom-linter": "^2.0.1",
+    "xml2js": "^0.4.9"
+  },
+  "providedServices": {
+    "linter": {
+      "versions": {
+        "1.0.0": "provideLinter"
+      }
+    }
   }
 }
