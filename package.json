@@ -7,15 +7,19 @@
     "lint"
   ],
   "main": "./lib/init",
-  "linter-package": true,
   "version": "0.0.14",
   "description": "Lint CSS on the fly, using csslint",
   "repository": "https://github.com/AtomLinter/linter-csslint",
   "license": "MIT",
-  "engines": {
-    "atom": ">0.50.0"
-  },
   "dependencies": {
+    "atom-linter": "^2.0.0",
     "csslint": "~0.10.0"
+  },
+  "providedServices": {
+    "linter": {
+      "versions": {
+        "1.0.0": "provideLinter"
+      }
+    }
   }
 }
