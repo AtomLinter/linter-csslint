@@ -31,25 +31,16 @@ module.exports =
         text = textEditor.getText()
         parameters = ['--format=lint-xml', filePath]
         return helpers.exec(@executablePath, parameters, {stdin: text}).then (output) ->
-          # return [{
-          #   type: "Warning",
-          #   text: "Unknown property 'stroke-width'.",
-          #   range: [[1, 1], [1, 4]],
-          #   trace: [{
-          #     type: "Trace",
-          #     text: "\tstroke-width: 3px;\r",
-          #     range: [[1, 1], [1, 4]]
-          #   }]
-          # }]
           toReturn = []
           parseString output, (err, result) ->
             for issue in result.lint.file[0].issue
               data = issue['$']
               line = parseInt(data.line, 10) - 1
-              char = parseInt(data.char, 10)
+              char = parseInt(data.char, 10) - 1
               toReturn.push({
                 type: data.severity.charAt(0).toUpperCase() + data.severity.slice(1),
                 text: data.reason,
+                filePath: filePath
                 range: [[line, char], [line, char]],
                 trace: [{
                   type: "Trace",
