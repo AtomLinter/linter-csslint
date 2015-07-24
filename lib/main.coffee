@@ -1,51 +1,34 @@
-{CompositeDisposable} = require 'atom'
-{parseString} = require 'xml2js'
-path = require 'path'
+csslint = require('csslint').CSSLint
 
 module.exports =
-  config:
-    executablePath:
-      title: 'CSSLint Executable Path'
-      type: 'string'
-      # default: path.join(__dirname, '..', 'node_modules', '.bin', 'csslint.cmd')
-      default: 'csslint'
-      description: 'Path of the `csslint` executable.'
-
   activate: ->
-    @subscriptions = new CompositeDisposable
-    @subscriptions.add atom.config.observe 'linter-csslint.executablePath',
-      (executablePath) =>
-        @executablePath = executablePath
-
-  deactivate: ->
-    @subscriptions.dispose()
+    @rules = csslint.getRules()
 
   provideLinter: ->
     helpers = require('atom-linter')
     provider =
       grammarScopes: ['source.css', 'source.html']
       scope: 'file'
-      lintOnFly: false # FIXME
+      lintOnFly: true
       lint: (textEditor) =>
         filePath = textEditor.getPath()
         text = textEditor.getText()
-        parameters = ['--format=lint-xml', filePath]
-        return helpers.exec(@executablePath, parameters, {stdin: text}).then (output) ->
-          toReturn = []
-          parseString output, (err, result) ->
-            for issue in result.lint.file[0].issue
-              data = issue['$']
-              line = parseInt(data.line, 10) - 1
-              char = parseInt(data.char, 10) - 1
-              toReturn.push({
-                type: data.severity.charAt(0).toUpperCase() + data.severity.slice(1),
-                text: data.reason,
-                filePath: filePath
-                range: [[line, char], [line, char]],
-                trace: [{
-                  type: "Trace",
-                  text: data.evidence,
-                  range: [[line, char], [line, char]]
-                }]
-              })
-          return toReturn
+        ruleset = @rules
+        lintResult = csslint.verify(text, ruleset)
+        if lintResult.messages.length < 1
+          return []
+        toReturn = []
+        for data in lintResult.messages
+          line = data.line - 1
+          col = data.col - 1
+          toReturn.push({
+            type: data.type.charAt(0).toUpperCase() + data.type.slice(1),
+            text: data.message,
+            filePath: filePath
+            range: [[line, col], [line, col]],
+            trace: [{
+              type: "Text",
+              text: '[' + data.rule.id + '] ' + data.rule.desc
+            }]
+          })
+        return toReturn

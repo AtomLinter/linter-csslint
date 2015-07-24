@@ -12,9 +12,7 @@
   "repository": "https://github.com/AtomLinter/linter-csslint",
   "license": "MIT",
   "dependencies": {
-    "csslint": "~0.10.0",
-    "atom-linter": "^2.0.1",
-    "xml2js": "^0.4.9"
+    "csslint": "~0.10.0"
   },
   "providedServices": {
     "linter": {
