@@ -1,4 +1,20 @@
 csslint = require('csslint').CSSLint
+path = require('path')
+fs = require('fs')
+
+# Adapted from cli/common.js in CSSLint
+gatherRules = (options, ruleset) ->
+  warnings = options.rules or options.warnings
+  errors = options.errors
+  if warnings
+    ruleset = ruleset or {}
+    warnings.split(",").map (value) ->
+      ruleset[value] = 1
+  if errors
+    ruleset = ruleset or {}
+    errors.split(",").map (value) ->
+      ruleset[value] = 2
+  return ruleset
 
 module.exports =
   activate: ->
@@ -13,7 +29,14 @@ module.exports =
       lint: (textEditor) =>
         filePath = textEditor.getPath()
         text = textEditor.getText()
-        ruleset = @rules
+        settingRules = @rules
+        try
+          configData = fs.readFileSync(path.join(path.dirname(filePath), '.csslintrc'), "utf-8")
+        if configData
+          fileConfig = JSON.parse(configData)
+        else
+          fileConfig = {}
+        ruleset = gatherRules(fileConfig, settingRules)
         lintResult = csslint.verify(text, ruleset)
         if lintResult.messages.length < 1
           return []
