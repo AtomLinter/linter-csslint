@@ -27,7 +27,7 @@ module.exports =
               filePath: filePath
               range: [[line, col], [line, col]],
               trace: [{
-                type: "Text",
+                type: "Trace",
                 text: '[' + data.rule.id + '] ' + data.rule.desc
               }]
             })
