@@ -19,8 +19,11 @@ module.exports =
           if lintResult.messages.length < 1
             return toReturn
           for data in lintResult.messages
-            line = data.line - 1
-            col = data.col - 1
+            if not data.rollup
+              line = data.line - 1
+              col = data.col - 1
+            else
+              helpers.rangeFromLineNumber(textEditor, 0)
             toReturn.push({
               type: data.type.charAt(0).toUpperCase() + data.type.slice(1),
               text: data.message,
