@@ -19,19 +19,21 @@ module.exports =
           if lintResult.messages.length < 1
             return toReturn
           for data in lintResult.messages
-            if not data.rollup
+            msg = {}
+            if not (data.line and data.col)
+              # Use the file start if location not defined
+              msg.range = helpers.rangeFromLineNumber(textEditor, 0)
+            else
               line = data.line - 1
               col = data.col - 1
-            else
-              helpers.rangeFromLineNumber(textEditor, 0)
-            toReturn.push({
-              type: data.type.charAt(0).toUpperCase() + data.type.slice(1),
-              text: data.message,
-              filePath: filePath
-              range: [[line, col], [line, col]],
-              trace: [{
+              msg.range = [[line, col], [line, col]]
+            msg.type = data.type.charAt(0).toUpperCase() + data.type.slice(1)
+            msg.text = data.message
+            msg.filePath = filePath
+            if data.rule.id and data.rule.desc
+              msg.trace = [{
                 type: "Trace",
                 text: '[' + data.rule.id + '] ' + data.rule.desc
               }]
-            })
+            toReturn.push(msg)
           return toReturn
