@@ -2,6 +2,9 @@ helpers = require('atom-linter')
 path = require('path')
 
 module.exports =
+  activate: ->
+    require('atom-package-deps').install('linter-csslint')
+
   provideLinter: ->
     helpers = require('atom-linter')
     provider =
