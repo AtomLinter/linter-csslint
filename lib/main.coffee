@@ -8,6 +8,7 @@ module.exports =
   provideLinter: ->
     helpers = require('atom-linter')
     provider =
+      name: 'CSSLint'
       grammarScopes: ['source.css', 'source.html']
       scope: 'file'
       lintOnFly: true
