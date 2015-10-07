@@ -17,7 +17,8 @@ module.exports =
         text = textEditor.getText()
         parameters = ['--format=json', '-']
         exec = path.join(__dirname, '..', 'node_modules', 'csslint', 'cli.js')
-        helpers.execNode(exec, parameters, {stdin: text}).then (output) ->
+        cwd = path.dirname(textEditor.getPath())
+        helpers.execNode(exec, parameters, {stdin: text, cwd: cwd}).then (output) ->
           lintResult = JSON.parse(output)
           toReturn = []
           if lintResult.messages.length < 1
