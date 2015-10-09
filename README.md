@@ -1,5 +1,6 @@
 linter-csslint
 =========================
+[![Build Status](https://travis-ci.org/AtomLinter/linter-csslint.svg)](https://travis-ci.org/AtomLinter/linter-csslint)
 
 This linter plugin for [Linter](https://github.com/AtomLinter/Linter) provides
 an interface to [csslint](https://github.com/CSSLint/csslint). It will be used
