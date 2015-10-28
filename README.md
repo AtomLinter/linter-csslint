@@ -12,15 +12,7 @@ a UI for the service this package provides.
 
 ### Plugin installation
 ```ShellSession
-$ apm install linter-csslint
-```
-
-## Settings
-You can configure linter-csslint by editing ~/.atom/config.cson (choose Open Your Config in Atom menu):
-```cson
-'linter-csslint':
-  #csslint path. run 'which csslint' to find the path
-  'executablePath': null
+apm install linter-csslint
 ```
 
 ## Contributing
