@@ -3,10 +3,9 @@ path = require('path')
 
 module.exports =
   activate: ->
-    require('atom-package-deps').install('linter-csslint')
+    require('atom-package-deps').install()
 
   provideLinter: ->
-    helpers = require('atom-linter')
     provider =
       name: 'CSSLint'
       grammarScopes: ['source.css', 'source.html']
