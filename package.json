@@ -32,8 +32,7 @@
     "extends": "airbnb/base",
     "parser": "babel-eslint",
     "globals": {
-      "atom": true,
-      "waitsForPromise": true
+      "atom": true
     },
     "env": {
       "es6": true,
