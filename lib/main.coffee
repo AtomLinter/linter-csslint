@@ -15,7 +15,7 @@ module.exports =
         filePath = textEditor.getPath()
         text = textEditor.getText()
         parameters = ['--format=json', '-']
-        exec = path.join(__dirname, '..', 'node_modules', 'csslint', 'cli.js')
+        exec = path.join(__dirname, '..', 'csslint', 'cli.js')
         cwd = path.dirname(textEditor.getPath())
         helpers.execNode(exec, parameters, {stdin: text, cwd: cwd}).then (output) ->
           lintResult = JSON.parse(output)
