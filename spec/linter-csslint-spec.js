@@ -1,5 +1,12 @@
 'use babel';
 
+import * as path from 'path';
+
+const badPath = path.join(__dirname, 'fixtures', 'bad.css');
+const goodPath = path.join(__dirname, 'fixtures', 'good.css');
+const emptyPath = path.join(__dirname, 'fixtures', 'empty.css');
+const invalidPath = path.join(__dirname, 'fixtures', 'invalid.css');
+
 describe('The csslint provider for Linter', () => {
   const lint = require('../lib/main').provideLinter().lint;
 
@@ -8,32 +15,30 @@ describe('The csslint provider for Linter', () => {
     waitsForPromise(() => {
       atom.packages.activatePackage('linter-csslint');
       return atom.packages.activatePackage('language-css').then(() =>
-        atom.workspace.open(__dirname + '/fixtures/empty.css')
+        atom.workspace.open(emptyPath)
       );
     });
   });
 
   describe('checks bad.css and', () => {
     let editor = null;
-    beforeEach(() => {
-      waitsForPromise(() => {
-        return atom.workspace.open(__dirname + '/fixtures/bad.css').then(openEditor => {
-          editor = openEditor;
-        });
-      });
-    });
+    beforeEach(() =>
+      waitsForPromise(() =>
+        atom.workspace.open(badPath).then(openEditor => editor = openEditor)
+      )
+    );
 
-    it('finds at least one message', () => {
-      waitsForPromise(() => {
-        return lint(editor).then(messages => {
-          expect(messages.length).toBeGreaterThan(0);
-        });
-      });
-    });
+    it('finds at least one message', () =>
+      waitsForPromise(() =>
+        lint(editor).then(messages =>
+          expect(messages.length).toBeGreaterThan(0)
+        )
+      )
+    );
 
-    it('verifies the first message', () => {
-      waitsForPromise(() => {
-        return lint(editor).then(messages => {
+    it('verifies the first message', () =>
+      waitsForPromise(() =>
+        lint(editor).then(messages => {
           expect(messages[0].type).toBeDefined();
           expect(messages[0].type).toEqual('Warning');
           expect(messages[0].text).toBeDefined();
@@ -43,32 +48,30 @@ describe('The csslint provider for Linter', () => {
           expect(messages[0].range).toBeDefined();
           expect(messages[0].range.length).toEqual(2);
           expect(messages[0].range).toEqual([[0, 0], [0, 0]]);
-        });
-      });
-    });
+        })
+      )
+    );
   });
 
   describe('warns on invalid CSS', () => {
     let editor = null;
-    beforeEach(() => {
-      waitsForPromise(() => {
-        return atom.workspace.open(__dirname + '/fixtures/invalid.css').then(openEditor => {
-          editor = openEditor;
-        });
-      });
-    });
+    beforeEach(() =>
+      waitsForPromise(() =>
+        atom.workspace.open(invalidPath).then(openEditor => editor = openEditor)
+      )
+    );
 
-    it('finds one message', () => {
-      waitsForPromise(() => {
-        return lint(editor).then(messages => {
-          expect(messages.length).toBe(1);
-        });
-      });
-    });
+    it('finds one message', () =>
+      waitsForPromise(() =>
+        lint(editor).then(messages =>
+          expect(messages.length).toBe(1)
+        )
+      )
+    );
 
-    it('verifies the message', () => {
-      waitsForPromise(() => {
-        return lint(editor).then(messages => {
+    it('verifies the message', () =>
+      waitsForPromise(() =>
+        lint(editor).then(messages => {
           expect(messages[0].type).toBeDefined();
           expect(messages[0].type).toEqual('Error');
           expect(messages[0].text).toBeDefined();
@@ -78,18 +81,18 @@ describe('The csslint provider for Linter', () => {
           expect(messages[0].range).toBeDefined();
           expect(messages[0].range.length).toEqual(2);
           expect(messages[0].range).toEqual([[0, 0], [0, 0]]);
-        });
-      });
-    });
+        })
+      )
+    );
   });
 
-  it('finds nothing wrong with a valid file', () => {
-    waitsForPromise(() => {
-      return atom.workspace.open(__dirname + '/fixtures/good.css').then(editor => {
-        return lint(editor).then(messages => {
-          expect(messages.length).toEqual(0);
-        });
-      });
-    });
-  });
+  it('finds nothing wrong with a valid file', () =>
+    waitsForPromise(() =>
+      atom.workspace.open(goodPath).then(editor =>
+        lint(editor).then(messages =>
+          expect(messages.length).toEqual(0)
+        )
+      )
+    )
+  );
 });
