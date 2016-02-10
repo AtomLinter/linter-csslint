@@ -21,7 +21,7 @@ module.exports =
         paths = atom.project.relativizePath(filePath)
         cwd = paths.projectPath
         if not (cwd)
-            cwd = path.dirname(textEditor.getPath())
+          cwd = path.dirname(textEditor.getPath())
         helpers.execNode(exec, parameters, {stdin: text, cwd: cwd}).then (output) ->
           lintResult = JSON.parse(output)
           toReturn = []
