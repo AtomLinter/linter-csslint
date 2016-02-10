@@ -18,8 +18,8 @@ module.exports =
         text = textEditor.getText()
         parameters = ['--format=json', '-']
         exec = path.join(__dirname, '..', 'node_modules', 'atomlinter-csslint', 'cli.js')
-        cwd = path.dirname(textEditor.getPath())
-        helpers.execNode(exec, parameters, {stdin: text, cwd: cwd}).then (output) ->
+        paths = atom.project.relativizePath(filePath)
+        helpers.execNode(exec, parameters, {stdin: text, cwd: paths.projectPath}).then (output) ->
           lintResult = JSON.parse(output)
           toReturn = []
           if lintResult.messages.length < 1
