@@ -4,7 +4,6 @@ import * as path from 'path';
 
 const badPath = path.join(__dirname, 'fixtures', 'bad.css');
 const goodPath = path.join(__dirname, 'fixtures', 'good.css');
-const emptyPath = path.join(__dirname, 'fixtures', 'empty.css');
 const invalidPath = path.join(__dirname, 'fixtures', 'invalid.css');
 
 describe('The csslint provider for Linter', () => {
@@ -15,7 +14,7 @@ describe('The csslint provider for Linter', () => {
     waitsForPromise(() => {
       atom.packages.activatePackage('linter-csslint');
       return atom.packages.activatePackage('language-css').then(() =>
-        atom.workspace.open(emptyPath)
+        atom.workspace.open(goodPath)
       );
     });
   });
