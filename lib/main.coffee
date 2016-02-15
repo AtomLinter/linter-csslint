@@ -19,7 +19,7 @@ module.exports =
         parameters = ['--format=json', '-']
         exec = path.join(__dirname, '..', 'node_modules', 'atomlinter-csslint', 'cli.js')
         paths = atom.project.relativizePath(filePath)
-        cwd = paths.projectPath
+        cwd = paths[0]
         if not (cwd)
           cwd = path.dirname(textEditor.getPath())
         helpers.execNode(exec, parameters, {stdin: text, cwd: cwd}).then (output) ->
