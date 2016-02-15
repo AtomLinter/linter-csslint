@@ -1,7 +1,15 @@
 # Change Log
 
-## [1.3.0](https://github.com/AtomLinter/linter-csslint/tree/1.3.0) (2016-02-13)
-[Full Changelog](https://github.com/AtomLinter/linter-csslint/compare/v1.2.0...1.3.0)
+## [1.3.1](https://github.com/AtomLinter/linter-csslint/tree/1.3.1) (2016-02-15)
+[Full Changelog](https://github.com/AtomLinter/linter-csslint/compare/v1.3.0...1.3.1)
+
+**Fixed bugs:**
+
+- Does not support .csslintrc? [\#73](https://github.com/AtomLinter/linter-csslint/issues/73)
+- Fix path [\#83](https://github.com/AtomLinter/linter-csslint/pull/83) ([Arcanemagus](https://github.com/Arcanemagus))
+
+## [v1.3.0](https://github.com/AtomLinter/linter-csslint/tree/v1.3.0) (2016-02-14)
+[Full Changelog](https://github.com/AtomLinter/linter-csslint/compare/v1.2.0...v1.3.0)
 
 **Implemented enhancements:**
 
@@ -11,7 +19,6 @@
 
 **Fixed bugs:**
 
-- Does not support .csslintrc? [\#73](https://github.com/AtomLinter/linter-csslint/issues/73)
 - Exec csslint from project root to pick up project .csslintrc [\#79](https://github.com/AtomLinter/linter-csslint/pull/79) ([clamey](https://github.com/clamey))
 
 ## [v1.2.0](https://github.com/AtomLinter/linter-csslint/tree/v1.2.0) (2016-01-05)
