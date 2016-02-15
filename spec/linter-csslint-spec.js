@@ -5,6 +5,8 @@ import * as path from 'path';
 const badPath = path.join(__dirname, 'fixtures', 'bad.css');
 const goodPath = path.join(__dirname, 'fixtures', 'good.css');
 const invalidPath = path.join(__dirname, 'fixtures', 'invalid.css');
+const projectPath = path.join(__dirname, 'fixtures', 'project');
+const projectBadPath = path.join(projectPath, 'files', 'badWC.css');
 
 describe('The csslint provider for Linter', () => {
   const lint = require('../lib/main').provideLinter().lint;
@@ -94,4 +96,18 @@ describe('The csslint provider for Linter', () => {
       )
     )
   );
+
+  it('respects .csslintrc configurations at the project root', () => {
+    atom.project.addPath(projectPath);
+    waitsForPromise(() =>
+      atom.workspace.open(projectBadPath).then(editor =>
+        lint(editor).then(messages => {
+          expect(messages[0].type).toBeDefined();
+          expect(messages[0].type).toEqual('Error');
+          expect(messages[0].text).toBeDefined();
+          expect(messages[0].text).toEqual('Rule is empty.');
+        })
+      )
+    );
+  });
 });
