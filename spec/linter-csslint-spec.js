@@ -5,6 +5,7 @@ import * as path from 'path';
 const badPath = path.join(__dirname, 'fixtures', 'bad.css');
 const goodPath = path.join(__dirname, 'fixtures', 'good.css');
 const invalidPath = path.join(__dirname, 'fixtures', 'invalid.css');
+const emptyPath = path.join(__dirname, 'fixtures', 'empty.css');
 const projectPath = path.join(__dirname, 'fixtures', 'project');
 const projectBadPath = path.join(projectPath, 'files', 'badWC.css');
 
@@ -40,14 +41,9 @@ describe('The csslint provider for Linter', () => {
     it('verifies the first message', () =>
       waitsForPromise(() =>
         lint(editor).then(messages => {
-          expect(messages[0].type).toBeDefined();
-          expect(messages[0].type).toEqual('Warning');
-          expect(messages[0].text).toBeDefined();
-          expect(messages[0].text).toEqual('Rule is empty.');
-          expect(messages[0].filePath).toBeDefined();
-          expect(messages[0].filePath).toMatch(/.+bad\.css$/);
-          expect(messages[0].range).toBeDefined();
-          expect(messages[0].range.length).toEqual(2);
+          expect(messages[0].type).toBe('Warning');
+          expect(messages[0].text).toBe('Rule is empty.');
+          expect(messages[0].filePath).toBe(badPath);
           expect(messages[0].range).toEqual([[0, 0], [0, 0]]);
         })
       )
@@ -73,14 +69,9 @@ describe('The csslint provider for Linter', () => {
     it('verifies the message', () =>
       waitsForPromise(() =>
         lint(editor).then(messages => {
-          expect(messages[0].type).toBeDefined();
-          expect(messages[0].type).toEqual('Error');
-          expect(messages[0].text).toBeDefined();
-          expect(messages[0].text).toEqual('Unexpected token \'}\' at line 1, col 1.');
-          expect(messages[0].filePath).toBeDefined();
-          expect(messages[0].filePath).toMatch(/.+invalid\.css$/);
-          expect(messages[0].range).toBeDefined();
-          expect(messages[0].range.length).toEqual(2);
+          expect(messages[0].type).toBe('Error');
+          expect(messages[0].text).toBe('Unexpected token \'}\' at line 1, col 1.');
+          expect(messages[0].filePath).toBe(invalidPath);
           expect(messages[0].range).toEqual([[0, 0], [0, 0]]);
         })
       )
@@ -90,6 +81,16 @@ describe('The csslint provider for Linter', () => {
   it('finds nothing wrong with a valid file', () =>
     waitsForPromise(() =>
       atom.workspace.open(goodPath).then(editor =>
+        lint(editor).then(messages =>
+          expect(messages.length).toEqual(0)
+        )
+      )
+    )
+  );
+
+  it('handles an empty file', () =>
+    waitsForPromise(() =>
+      atom.workspace.open(emptyPath).then(editor =>
         lint(editor).then(messages =>
           expect(messages.length).toEqual(0)
         )
