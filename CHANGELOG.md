@@ -1,7 +1,21 @@
 # Change Log
 
-## [1.3.1](https://github.com/AtomLinter/linter-csslint/tree/1.3.1) (2016-02-15)
-[Full Changelog](https://github.com/AtomLinter/linter-csslint/compare/v1.3.0...1.3.1)
+## [1.3.2](https://github.com/AtomLinter/linter-csslint/tree/1.3.2) (2016-03-03)
+[Full Changelog](https://github.com/AtomLinter/linter-csslint/compare/v1.3.1...1.3.2)
+
+**Fixed bugs:**
+
+- SyntaxError: Unexpected token c [\#93](https://github.com/AtomLinter/linter-csslint/issues/93)
+- Handle empty files [\#94](https://github.com/AtomLinter/linter-csslint/pull/94) ([Arcanemagus](https://github.com/Arcanemagus))
+
+**Merged pull requests:**
+
+- Update eslint to version 2.2.0 🚀 [\#87](https://github.com/AtomLinter/linter-csslint/pull/87) ([greenkeeperio-bot](https://github.com/greenkeeperio-bot))
+- Update babel-eslint to version 5.0.0 🚀 [\#86](https://github.com/AtomLinter/linter-csslint/pull/86) ([greenkeeperio-bot](https://github.com/greenkeeperio-bot))
+- Update atom-package-deps to version 4.0.1 🚀 [\#85](https://github.com/AtomLinter/linter-csslint/pull/85) ([greenkeeperio-bot](https://github.com/greenkeeperio-bot))
+
+## [v1.3.1](https://github.com/AtomLinter/linter-csslint/tree/v1.3.1) (2016-02-15)
+[Full Changelog](https://github.com/AtomLinter/linter-csslint/compare/v1.3.0...v1.3.1)
 
 **Fixed bugs:**
 
