@@ -16,6 +16,7 @@ module.exports =
         path ?= require('path')
         filePath = textEditor.getPath()
         text = textEditor.getText()
+        return Promise.resolve([]) if text.length is 0
         parameters = ['--format=json', '-']
         exec = path.join(__dirname, '..', 'node_modules', 'atomlinter-csslint', 'cli.js')
         paths = atom.project.relativizePath(filePath)
