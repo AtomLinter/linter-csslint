@@ -24,8 +24,9 @@ module.exports =
         if not (cwd)
           cwd = path.dirname(textEditor.getPath())
         helpers.execNode(exec, parameters, {stdin: text, cwd: cwd}).then (output) ->
-          lintResult = JSON.parse(output)
           toReturn = []
+          return toReturn if output.length < 1
+          lintResult = JSON.parse(output)
           if lintResult.messages.length < 1
             return toReturn
           for data in lintResult.messages
