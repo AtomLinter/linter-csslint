@@ -1,4 +1,4 @@
-'use babel';
+'use strict';
 
 import * as path from 'path';
 
