@@ -11,6 +11,13 @@
   "description": "Lint CSS on the fly, using csslint",
   "repository": "https://github.com/AtomLinter/linter-csslint",
   "license": "MIT",
+  "configSchema": {
+    "disableTimeout": {
+      "type": "boolean",
+      "description": "Disable the 10 second execution timeout",
+      "default": false
+    }
+  },
   "dependencies": {
     "atomlinter-csslint": "0.10.0",
     "atom-linter": "^4.6.1",

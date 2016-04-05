@@ -1,9 +1,17 @@
+{CompositeDisposable} = require 'atom'
 helpers = null
 path = null
 
 module.exports =
   activate: ->
     require('atom-package-deps').install('linter-csslint')
+    @subscriptions = new CompositeDisposable
+    @subscriptions.add atom.config.observe 'linter-csslint.disableTimeout',
+      (disableTimeout) =>
+        @disableTimeout = disableTimeout
+
+  deactivate: ->
+    @subscriptions.dispose()
 
   provideLinter: ->
     provider =
@@ -23,7 +31,10 @@ module.exports =
         cwd = paths[0]
         if not (cwd)
           cwd = path.dirname(textEditor.getPath())
-        helpers.execNode(exec, parameters, {stdin: text, cwd: cwd}).then (output) ->
+        options = {stdin: text, cwd: cwd}
+        if @disableTimeout
+          options.timeout = Infinity
+        helpers.execNode(exec, parameters, options).then (output) ->
           toReturn = []
           return toReturn if output.length < 1
           lintResult = JSON.parse(output)
