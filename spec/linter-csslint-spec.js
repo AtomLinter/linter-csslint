@@ -10,7 +10,7 @@ const projectPath = path.join(__dirname, 'fixtures', 'project');
 const projectBadPath = path.join(projectPath, 'files', 'badWC.css');
 
 describe('The csslint provider for Linter', () => {
-  const lint = require('../lib/main').provideLinter().lint;
+  const lint = require('../lib/main.coffee').provideLinter().lint;
 
   beforeEach(() => {
     atom.workspace.destroyActivePaneItem();
