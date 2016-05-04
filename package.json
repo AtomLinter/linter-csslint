@@ -25,9 +25,9 @@
   },
   "devDependencies": {
     "coffeelint": "^1.15.0",
-    "eslint": "^2.8.0",
-    "eslint-config-airbnb-base": "^1.0.4",
-    "eslint-plugin-import": "^1.6.0"
+    "eslint": "^2.9.0",
+    "eslint-config-airbnb-base": "^2.0.0",
+    "eslint-plugin-import": "^1.6.1"
   },
   "package-deps": [
     "linter"
@@ -40,7 +40,14 @@
     "extends": "airbnb-base",
     "rules": {
       "global-require": 0,
-      "import/no-unresolved": [2, {"ignore": ["atom"]}]
+      "import/no-unresolved": [
+        2,
+        {
+          "ignore": [
+            "atom"
+          ]
+        }
+      ]
     },
     "globals": {
       "atom": true
