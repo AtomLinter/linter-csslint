@@ -63,7 +63,7 @@
 ## [v1.1.0](https://github.com/AtomLinter/linter-csslint/tree/v1.1.0) (2015-10-07)
 [Full Changelog](https://github.com/AtomLinter/linter-csslint/compare/v1.0.7...v1.1.0)
 
-**Closed issues:**
+**Fixed bugs:**
 
 - .csslintrc support [\#49](https://github.com/AtomLinter/linter-csslint/issues/49)
 
@@ -83,11 +83,11 @@
 
 **Implemented enhancements:**
 
+- Install `linter` automatically. [\#43](https://github.com/AtomLinter/linter-csslint/issues/43)
 - Automatically install linter [\#47](https://github.com/AtomLinter/linter-csslint/pull/47) ([Arcanemagus](https://github.com/Arcanemagus))
 
-**Closed issues:**
+**Fixed bugs:**
 
-- Install `linter` automatically. [\#43](https://github.com/AtomLinter/linter-csslint/issues/43)
 - Uncaught TypeError: Invalid Point: \(NaN, NaN\) [\#37](https://github.com/AtomLinter/linter-csslint/issues/37)
 
 ## [v1.0.5](https://github.com/AtomLinter/linter-csslint/tree/v1.0.5) (2015-08-07)
@@ -122,7 +122,7 @@
 - Doesn't consider .csslintrc files in parent directories [\#8](https://github.com/AtomLinter/linter-csslint/issues/8)
 - Update to the new Linter API [\#33](https://github.com/AtomLinter/linter-csslint/pull/33) ([Arcanemagus](https://github.com/Arcanemagus))
 
-**Closed issues:**
+**Fixed bugs:**
 
 - Appears to be broken, now that isNodeExecutable is false [\#28](https://github.com/AtomLinter/linter-csslint/issues/28)
 
@@ -136,11 +136,8 @@
 ## [v0.0.13](https://github.com/AtomLinter/linter-csslint/tree/v0.0.13) (2015-05-21)
 [Full Changelog](https://github.com/AtomLinter/linter-csslint/compare/v0.0.12...v0.0.13)
 
-**Closed issues:**
+**Fixed bugs:**
 
-- Config.unobserve is deprecated. [\#24](https://github.com/AtomLinter/linter-csslint/issues/24)
-- Package.getActivationCommands is deprecated. [\#23](https://github.com/AtomLinter/linter-csslint/issues/23)
-- Package.activateConfig is deprecated. [\#22](https://github.com/AtomLinter/linter-csslint/issues/22)
 - Package.getActivationCommands is deprecated. [\#20](https://github.com/AtomLinter/linter-csslint/issues/20)
 - Package.activateConfig is deprecated. [\#19](https://github.com/AtomLinter/linter-csslint/issues/19)
 - Config.unobserve is deprecated. [\#18](https://github.com/AtomLinter/linter-csslint/issues/18)
@@ -151,10 +148,6 @@
 **Implemented enhancements:**
 
 - Big performance hit on large files \(5000 lines CSS\) [\#6](https://github.com/AtomLinter/linter-csslint/issues/6)
-
-**Closed issues:**
-
-- TypeError on "Too many font-size declarations..." [\#13](https://github.com/AtomLinter/linter-csslint/issues/13)
 
 **Merged pull requests:**
 
