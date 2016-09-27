@@ -1,7 +1,32 @@
 # Change Log
 
-## [1.3.2](https://github.com/AtomLinter/linter-csslint/tree/1.3.2) (2016-03-03)
-[Full Changelog](https://github.com/AtomLinter/linter-csslint/compare/v1.3.1...1.3.2)
+## [v1.3.3](https://github.com/AtomLinter/linter-csslint/tree/v1.3.3) (2016-09-27)
+[Full Changelog](https://github.com/AtomLinter/linter-csslint/compare/v1.3.2...v1.3.3)
+
+**Implemented enhancements:**
+
+- Error Process Execution Timed Out [\#95](https://github.com/AtomLinter/linter-csslint/issues/95)
+- Rewrite in ES2015 [\#148](https://github.com/AtomLinter/linter-csslint/pull/148) ([Arcanemagus](https://github.com/Arcanemagus))
+- Update ESLint to v3.6.1 [\#147](https://github.com/AtomLinter/linter-csslint/pull/147) ([Arcanemagus](https://github.com/Arcanemagus))
+- Update CI configuration [\#146](https://github.com/AtomLinter/linter-csslint/pull/146) ([Arcanemagus](https://github.com/Arcanemagus))
+- Update atom-linter to version 8.0.0 🚀 [\#136](https://github.com/AtomLinter/linter-csslint/pull/136) ([greenkeeperio-bot](https://github.com/greenkeeperio-bot))
+- Update atom-linter to version 7.0.0 🚀 [\#124](https://github.com/AtomLinter/linter-csslint/pull/124) ([greenkeeperio-bot](https://github.com/greenkeeperio-bot))
+- Update atom-linter to version 6.0.0 🚀 [\#116](https://github.com/AtomLinter/linter-csslint/pull/116) ([greenkeeperio-bot](https://github.com/greenkeeperio-bot))
+- Update eslint-config-airbnb-base to version 3.0.1 🚀 [\#114](https://github.com/AtomLinter/linter-csslint/pull/114) ([greenkeeperio-bot](https://github.com/greenkeeperio-bot))
+- Update atom-linter to version 5.0.1 🚀 [\#113](https://github.com/AtomLinter/linter-csslint/pull/113) ([greenkeeperio-bot](https://github.com/greenkeeperio-bot))
+- Update eslint-config-airbnb-base to version 2.0.0 🚀 [\#110](https://github.com/AtomLinter/linter-csslint/pull/110) ([greenkeeperio-bot](https://github.com/greenkeeperio-bot))
+- Move to eslint-config-airbnb-base [\#109](https://github.com/AtomLinter/linter-csslint/pull/109) ([Arcanemagus](https://github.com/Arcanemagus))
+- Update eslint-config-airbnb to version 7.0.0 🚀 [\#103](https://github.com/AtomLinter/linter-csslint/pull/103) ([greenkeeperio-bot](https://github.com/greenkeeperio-bot))
+- Add an option to disable execution timeout [\#102](https://github.com/AtomLinter/linter-csslint/pull/102) ([Arcanemagus](https://github.com/Arcanemagus))
+- Update dependencies [\#101](https://github.com/AtomLinter/linter-csslint/pull/101) ([Arcanemagus](https://github.com/Arcanemagus))
+
+**Fixed bugs:**
+
+- Unexpected end of input when attempting to lint [\#92](https://github.com/AtomLinter/linter-csslint/issues/92)
+- Handle blank output [\#100](https://github.com/AtomLinter/linter-csslint/pull/100) ([Arcanemagus](https://github.com/Arcanemagus))
+
+## [v1.3.2](https://github.com/AtomLinter/linter-csslint/tree/v1.3.2) (2016-03-03)
+[Full Changelog](https://github.com/AtomLinter/linter-csslint/compare/v1.3.1...v1.3.2)
 
 **Fixed bugs:**
 
