@@ -11,6 +11,7 @@
   "description": "Lint CSS on the fly, using csslint",
   "repository": "https://github.com/AtomLinter/linter-csslint",
   "license": "MIT",
+  "private": true,
   "configSchema": {
     "disableTimeout": {
       "type": "boolean",
@@ -24,7 +25,6 @@
     "atom-package-deps": "^4.0.1"
   },
   "devDependencies": {
-    "coffeelint": "^1.15.0",
     "eslint": "^3.6.1",
     "eslint-config-airbnb-base": "^8.0.0",
     "eslint-plugin-import": "^1.16.0"
@@ -55,44 +55,6 @@
     "env": {
       "es6": true,
       "node": true
-    }
-  },
-  "coffeelintConfig": {
-    "max_line_length": {
-      "value": 120,
-      "level": "warn"
-    },
-    "no_empty_param_list": {
-      "level": "error"
-    },
-    "arrow_spacing": {
-      "level": "error"
-    },
-    "no_interpolation_in_single_quotes": {
-      "level": "error"
-    },
-    "no_debugger": {
-      "level": "error"
-    },
-    "prefer_english_operator": {
-      "level": "error"
-    },
-    "colon_assignment_spacing": {
-      "spacing": {
-        "left": 0,
-        "right": 1
-      },
-      "level": "error"
-    },
-    "braces_spacing": {
-      "spaces": 0,
-      "level": "error"
-    },
-    "spacing_after_comma": {
-      "level": "error"
-    },
-    "no_stand_alone_at": {
-      "level": "error"
     }
   },
   "providedServices": {

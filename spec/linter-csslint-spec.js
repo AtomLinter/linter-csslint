@@ -10,7 +10,7 @@ const projectPath = path.join(__dirname, 'fixtures', 'project');
 const projectBadPath = path.join(projectPath, 'files', 'badWC.css');
 
 describe('The csslint provider for Linter', () => {
-  const lint = require('../lib/main.coffee').provideLinter().lint;
+  const lint = require('../lib/main.js').provideLinter().lint;
 
   beforeEach(() => {
     atom.workspace.destroyActivePaneItem();
@@ -44,7 +44,7 @@ describe('The csslint provider for Linter', () => {
           expect(messages[0].type).toBe('Warning');
           expect(messages[0].text).toBe('Rule is empty.');
           expect(messages[0].filePath).toBe(badPath);
-          expect(messages[0].range).toEqual([[0, 0], [0, 0]]);
+          expect(messages[0].range).toEqual([[0, 0], [0, 4]]);
         })
       )
     );
@@ -72,7 +72,7 @@ describe('The csslint provider for Linter', () => {
           expect(messages[0].type).toBe('Error');
           expect(messages[0].text).toBe('Unexpected token \'}\' at line 1, col 1.');
           expect(messages[0].filePath).toBe(invalidPath);
-          expect(messages[0].range).toEqual([[0, 0], [0, 0]]);
+          expect(messages[0].range).toEqual([[0, 0], [0, 1]]);
         })
       )
     );
