@@ -26,7 +26,7 @@ describe('The csslint provider for Linter', () => {
     let editor = null;
     beforeEach(() =>
       waitsForPromise(() =>
-        atom.workspace.open(badPath).then(openEditor => { editor = openEditor; })
+        atom.workspace.open(badPath).then((openEditor) => { editor = openEditor; })
       )
     );
 
@@ -40,7 +40,7 @@ describe('The csslint provider for Linter', () => {
 
     it('verifies the first message', () =>
       waitsForPromise(() =>
-        lint(editor).then(messages => {
+        lint(editor).then((messages) => {
           expect(messages[0].type).toBe('Warning');
           expect(messages[0].text).toBe('Rule is empty.');
           expect(messages[0].filePath).toBe(badPath);
@@ -54,7 +54,7 @@ describe('The csslint provider for Linter', () => {
     let editor = null;
     beforeEach(() =>
       waitsForPromise(() =>
-        atom.workspace.open(invalidPath).then(openEditor => { editor = openEditor; })
+        atom.workspace.open(invalidPath).then((openEditor) => { editor = openEditor; })
       )
     );
 
@@ -68,7 +68,7 @@ describe('The csslint provider for Linter', () => {
 
     it('verifies the message', () =>
       waitsForPromise(() =>
-        lint(editor).then(messages => {
+        lint(editor).then((messages) => {
           expect(messages[0].type).toBe('Error');
           expect(messages[0].text).toBe('Unexpected token \'}\' at line 1, col 1.');
           expect(messages[0].filePath).toBe(invalidPath);
@@ -102,7 +102,7 @@ describe('The csslint provider for Linter', () => {
     atom.project.addPath(projectPath);
     waitsForPromise(() =>
       atom.workspace.open(projectBadPath).then(editor =>
-        lint(editor).then(messages => {
+        lint(editor).then((messages) => {
           expect(messages[0].type).toBeDefined();
           expect(messages[0].type).toEqual('Error');
           expect(messages[0].text).toBeDefined();
