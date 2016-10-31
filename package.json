@@ -19,6 +19,9 @@
       "default": false
     }
   },
+  "engines": {
+    "atom": ">=1.4.0 <2.0.0"
+  },
   "dependencies": {
     "atomlinter-csslint": "0.10.0",
     "atom-linter": "^8.0.0",
