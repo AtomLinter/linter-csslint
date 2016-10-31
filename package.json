@@ -33,7 +33,7 @@
     "linter"
   ],
   "scripts": {
-    "lint": "coffeelint lib && eslint spec",
+    "lint": "eslint .",
     "test": "apm test"
   },
   "eslintConfig": {
@@ -53,7 +53,6 @@
       "atom": true
     },
     "env": {
-      "es6": true,
       "node": true
     }
   },
