@@ -14,12 +14,14 @@ describe('The csslint provider for Linter', () => {
 
   beforeEach(() => {
     atom.workspace.destroyActivePaneItem();
-    waitsForPromise(() => {
-      atom.packages.activatePackage('linter-csslint');
-      return atom.packages.activatePackage('language-css').then(() =>
+    waitsForPromise(() =>
+      Promise.all([
+        atom.packages.activatePackage('linter-csslint'),
+        atom.packages.activatePackage('language-css'),
+      ]).then(() =>
         atom.workspace.open(goodPath)
-      );
-    });
+      )
+    );
   });
 
   describe('checks bad.css and', () => {
