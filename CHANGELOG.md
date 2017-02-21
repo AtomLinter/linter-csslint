@@ -28,16 +28,16 @@
 ## [v1.3.2](https://github.com/AtomLinter/linter-csslint/tree/v1.3.2) (2016-03-03)
 [Full Changelog](https://github.com/AtomLinter/linter-csslint/compare/v1.3.1...v1.3.2)
 
-**Fixed bugs:**
-
-- SyntaxError: Unexpected token c [\#93](https://github.com/AtomLinter/linter-csslint/issues/93)
-- Handle empty files [\#94](https://github.com/AtomLinter/linter-csslint/pull/94) ([Arcanemagus](https://github.com/Arcanemagus))
-
-**Merged pull requests:**
+**Implemented enhancements:**
 
 - Update eslint to version 2.2.0 🚀 [\#87](https://github.com/AtomLinter/linter-csslint/pull/87) ([greenkeeperio-bot](https://github.com/greenkeeperio-bot))
 - Update babel-eslint to version 5.0.0 🚀 [\#86](https://github.com/AtomLinter/linter-csslint/pull/86) ([greenkeeperio-bot](https://github.com/greenkeeperio-bot))
 - Update atom-package-deps to version 4.0.1 🚀 [\#85](https://github.com/AtomLinter/linter-csslint/pull/85) ([greenkeeperio-bot](https://github.com/greenkeeperio-bot))
+
+**Fixed bugs:**
+
+- SyntaxError: Unexpected token c [\#93](https://github.com/AtomLinter/linter-csslint/issues/93)
+- Handle empty files [\#94](https://github.com/AtomLinter/linter-csslint/pull/94) ([Arcanemagus](https://github.com/Arcanemagus))
 
 ## [v1.3.1](https://github.com/AtomLinter/linter-csslint/tree/v1.3.1) (2016-02-15)
 [Full Changelog](https://github.com/AtomLinter/linter-csslint/compare/v1.3.0...v1.3.1)
@@ -68,7 +68,9 @@
 - Changelog? [\#3](https://github.com/AtomLinter/linter-csslint/issues/3)
 - Use atomlinter-csslint node module [\#72](https://github.com/AtomLinter/linter-csslint/pull/72) ([Arcanemagus](https://github.com/Arcanemagus))
 - Merge csslint [\#71](https://github.com/AtomLinter/linter-csslint/pull/71) ([Arcanemagus](https://github.com/Arcanemagus))
+- Update the readme [\#70](https://github.com/AtomLinter/linter-csslint/pull/70) ([Arcanemagus](https://github.com/Arcanemagus))
 - Update eslint-config-airbnb to version 3.0.0 🚀 [\#69](https://github.com/AtomLinter/linter-csslint/pull/69) ([greenkeeperio-bot](https://github.com/greenkeeperio-bot))
+- Add specs [\#64](https://github.com/AtomLinter/linter-csslint/pull/64) ([Arcanemagus](https://github.com/Arcanemagus))
 - Update all dependencies 🌴 [\#63](https://github.com/AtomLinter/linter-csslint/pull/63) ([greenkeeperio-bot](https://github.com/greenkeeperio-bot))
 - Add .gitattributes [\#56](https://github.com/AtomLinter/linter-csslint/pull/56) ([Arcanemagus](https://github.com/Arcanemagus))
 - Add Travis-CI [\#55](https://github.com/AtomLinter/linter-csslint/pull/55) ([Arcanemagus](https://github.com/Arcanemagus))
@@ -77,24 +79,19 @@
 **Fixed bugs:**
 
 - Updating to “linter-csslint@1.0.2” failed. [\#40](https://github.com/AtomLinter/linter-csslint/issues/40)
-
-**Merged pull requests:**
-
-- Update the readme [\#70](https://github.com/AtomLinter/linter-csslint/pull/70) ([Arcanemagus](https://github.com/Arcanemagus))
 - Move the Atom-jasmine specific config [\#65](https://github.com/AtomLinter/linter-csslint/pull/65) ([Arcanemagus](https://github.com/Arcanemagus))
-- Add specs [\#64](https://github.com/AtomLinter/linter-csslint/pull/64) ([Arcanemagus](https://github.com/Arcanemagus))
 - Remove Settings section [\#59](https://github.com/AtomLinter/linter-csslint/pull/59) ([Arcanemagus](https://github.com/Arcanemagus))
 
 ## [v1.1.0](https://github.com/AtomLinter/linter-csslint/tree/v1.1.0) (2015-10-07)
 [Full Changelog](https://github.com/AtomLinter/linter-csslint/compare/v1.0.7...v1.1.0)
 
+**Implemented enhancements:**
+
+- Specify current directory [\#53](https://github.com/AtomLinter/linter-csslint/pull/53) ([Arcanemagus](https://github.com/Arcanemagus))
+
 **Fixed bugs:**
 
 - .csslintrc support [\#49](https://github.com/AtomLinter/linter-csslint/issues/49)
-
-**Merged pull requests:**
-
-- Specify current directory [\#53](https://github.com/AtomLinter/linter-csslint/pull/53) ([Arcanemagus](https://github.com/Arcanemagus))
 
 ## [v1.0.7](https://github.com/AtomLinter/linter-csslint/tree/v1.0.7) (2015-10-01)
 [Full Changelog](https://github.com/AtomLinter/linter-csslint/compare/v1.0.6...v1.0.7)
@@ -124,14 +121,14 @@
 ## [v1.0.3](https://github.com/AtomLinter/linter-csslint/tree/v1.0.3) (2015-08-07)
 [Full Changelog](https://github.com/AtomLinter/linter-csslint/compare/v1.0.2...v1.0.3)
 
-**Merged pull requests:**
+**Fixed bugs:**
 
 - Don't make any assumptions about output [\#39](https://github.com/AtomLinter/linter-csslint/pull/39) ([Arcanemagus](https://github.com/Arcanemagus))
 
 ## [v1.0.2](https://github.com/AtomLinter/linter-csslint/tree/v1.0.2) (2015-08-06)
 [Full Changelog](https://github.com/AtomLinter/linter-csslint/compare/v1.0.1...v1.0.2)
 
-**Merged pull requests:**
+**Fixed bugs:**
 
 - Handle messages with no line [\#38](https://github.com/AtomLinter/linter-csslint/pull/38) ([Arcanemagus](https://github.com/Arcanemagus))
 
@@ -154,7 +151,7 @@
 ## [v0.0.14](https://github.com/AtomLinter/linter-csslint/tree/v0.0.14) (2015-06-27)
 [Full Changelog](https://github.com/AtomLinter/linter-csslint/compare/v0.0.13...v0.0.14)
 
-**Merged pull requests:**
+**Fixed bugs:**
 
 - Revert isNodeExecutable: yes [\#14](https://github.com/AtomLinter/linter-csslint/pull/14) ([arturparkhisenko](https://github.com/arturparkhisenko))
 
@@ -174,7 +171,7 @@
 
 - Big performance hit on large files \(5000 lines CSS\) [\#6](https://github.com/AtomLinter/linter-csslint/issues/6)
 
-**Merged pull requests:**
+**Fixed bugs:**
 
 - Fix deprecation warnings [\#21](https://github.com/AtomLinter/linter-csslint/pull/21) ([zimme](https://github.com/zimme))
 
@@ -188,7 +185,7 @@
 ## [v0.0.10](https://github.com/AtomLinter/linter-csslint/tree/v0.0.10) (2014-06-15)
 [Full Changelog](https://github.com/AtomLinter/linter-csslint/compare/v0.0.9...v0.0.10)
 
-**Merged pull requests:**
+**Fixed bugs:**
 
 - Fixed typo [\#1](https://github.com/AtomLinter/linter-csslint/pull/1) ([pborreli](https://github.com/pborreli))
 
