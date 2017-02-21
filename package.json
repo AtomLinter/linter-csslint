@@ -7,7 +7,7 @@
     "lint"
   ],
   "main": "./lib/main",
-  "version": "1.3.3",
+  "version": "1.3.4",
   "description": "Lint CSS on the fly, using csslint",
   "repository": "https://github.com/AtomLinter/linter-csslint",
   "license": "MIT",

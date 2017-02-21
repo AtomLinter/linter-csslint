@@ -1,5 +1,17 @@
 # Change Log
 
+## [v1.3.4](https://github.com/AtomLinter/linter-csslint/tree/v1.3.4) (2017-02-21)
+[Full Changelog](https://github.com/AtomLinter/linter-csslint/compare/v1.3.3...v1.3.4)
+
+**Implemented enhancements:**
+
+- Update dependencies to enable Greenkeeper 🌴 [\#154](https://github.com/AtomLinter/linter-csslint/pull/154) ([greenkeeper[bot]](https://github.com/integration/greenkeeper))
+
+**Fixed bugs:**
+
+- Linter-csslint does not work after updating Atom.  [\#156](https://github.com/AtomLinter/linter-csslint/issues/156)
+- Bugfixes [\#155](https://github.com/AtomLinter/linter-csslint/pull/155) ([Arcanemagus](https://github.com/Arcanemagus))
+
 ## [v1.3.3](https://github.com/AtomLinter/linter-csslint/tree/v1.3.3) (2016-09-27)
 [Full Changelog](https://github.com/AtomLinter/linter-csslint/compare/v1.3.2...v1.3.3)
 
