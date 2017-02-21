@@ -19,8 +19,11 @@
       "default": false
     }
   },
+  "engines": {
+    "atom": ">=1.4.0 <2.0.0"
+  },
   "dependencies": {
-    "atomlinter-csslint": "0.10.0",
+    "atomlinter-csslint": "0.10.1",
     "atom-linter": "^8.0.0",
     "atom-package-deps": "^4.0.1"
   },
@@ -33,7 +36,7 @@
     "linter"
   ],
   "scripts": {
-    "lint": "coffeelint lib && eslint spec",
+    "lint": "eslint .",
     "test": "apm test"
   },
   "eslintConfig": {
@@ -53,7 +56,6 @@
       "atom": true
     },
     "env": {
-      "es6": true,
       "node": true
     }
   },
