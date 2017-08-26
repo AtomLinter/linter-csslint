@@ -12,8 +12,7 @@ Please note that modifications should follow these coding guidelines:
 
 -   Indent is 2 spaces.
 
--   Code should pass [CoffeeLint](http://www.coffeelint.org/) with the provided
-    `coffeelint.json`
+-   Code should pass [ESlint](https://eslint.org/).
 
 -   Vertical whitespace helps readability, don’t be afraid to use it.
 
