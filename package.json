@@ -28,9 +28,9 @@
     "atomlinter-csslint": "0.10.1"
   },
   "devDependencies": {
-    "eslint": "^3.15.0",
-    "eslint-config-airbnb-base": "^11.1.0",
-    "eslint-plugin-import": "^2.2.0"
+    "eslint": "^4.3.0",
+    "eslint-config-airbnb-base": "^11.3.1",
+    "eslint-plugin-import": "^2.7.0"
   },
   "package-deps": [
     "linter"
@@ -56,7 +56,8 @@
       "atom": true
     },
     "env": {
-      "node": true
+      "node": true,
+      "browser": true
     }
   },
   "providedServices": {
