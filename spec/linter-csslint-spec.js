@@ -1,6 +1,8 @@
 'use babel';
 
 import * as path from 'path';
+// eslint-disable-next-line no-unused-vars
+import { it, fit, wait, beforeEach, afterEach } from 'jasmine-fix';
 
 const badPath = path.join(__dirname, 'fixtures', 'bad.css');
 const goodPath = path.join(__dirname, 'fixtures', 'good.css');
@@ -12,105 +14,62 @@ const projectBadPath = path.join(projectPath, 'files', 'badWC.css');
 describe('The csslint provider for Linter', () => {
   const lint = require('../lib/main.js').provideLinter().lint;
 
-  beforeEach(() => {
+  beforeEach(async () => {
     atom.workspace.destroyActivePaneItem();
-    waitsForPromise(() =>
-      Promise.all([
-        atom.packages.activatePackage('linter-csslint'),
-        atom.packages.activatePackage('language-css'),
-      ]).then(() =>
-        atom.workspace.open(goodPath),
-      ),
-    );
+
+    await atom.packages.activatePackage('linter-csslint');
+    await atom.packages.activatePackage('language-css');
   });
 
   describe('checks bad.css and', () => {
-    let editor = null;
-    beforeEach(() =>
-      waitsForPromise(() =>
-        atom.workspace.open(badPath).then((openEditor) => { editor = openEditor; }),
-      ),
-    );
+    it('verifies the first message', async () => {
+      const editor = await atom.workspace.open(badPath);
+      const messages = await lint(editor);
 
-    it('finds at least one message', () =>
-      waitsForPromise(() =>
-        lint(editor).then(messages =>
-          expect(messages.length).toBeGreaterThan(0),
-        ),
-      ),
-    );
-
-    it('verifies the first message', () =>
-      waitsForPromise(() =>
-        lint(editor).then((messages) => {
-          expect(messages[0].type).toBe('Warning');
-          expect(messages[0].text).toBe('Rule is empty.');
-          expect(messages[0].filePath).toBe(badPath);
-          expect(messages[0].range).toEqual([[0, 0], [0, 4]]);
-        }),
-      ),
-    );
+      expect(messages.length).toBe(1);
+      expect(messages[0].type).toBe('Warning');
+      expect(messages[0].text).toBe('Rule is empty.');
+      expect(messages[0].filePath).toBe(badPath);
+      expect(messages[0].range).toEqual([[0, 0], [0, 4]]);
+    });
   });
 
   describe('warns on invalid CSS', () => {
-    let editor = null;
-    beforeEach(() =>
-      waitsForPromise(() =>
-        atom.workspace.open(invalidPath).then((openEditor) => { editor = openEditor; }),
-      ),
-    );
+    it('verifies the message', async () => {
+      const editor = await atom.workspace.open(invalidPath);
+      const messages = await lint(editor);
 
-    it('finds one message', () =>
-      waitsForPromise(() =>
-        lint(editor).then(messages =>
-          expect(messages.length).toBe(1),
-        ),
-      ),
-    );
-
-    it('verifies the message', () =>
-      waitsForPromise(() =>
-        lint(editor).then((messages) => {
-          expect(messages[0].type).toBe('Error');
-          expect(messages[0].text).toBe('Unexpected token \'}\' at line 1, col 1.');
-          expect(messages[0].filePath).toBe(invalidPath);
-          expect(messages[0].range).toEqual([[0, 0], [0, 1]]);
-        }),
-      ),
-    );
+      expect(messages.length).toBe(1);
+      expect(messages[0].type).toBe('Error');
+      expect(messages[0].text).toBe('Unexpected token \'}\' at line 1, col 1.');
+      expect(messages[0].filePath).toBe(invalidPath);
+      expect(messages[0].range).toEqual([[0, 0], [0, 1]]);
+    });
   });
 
-  it('finds nothing wrong with a valid file', () =>
-    waitsForPromise(() =>
-      atom.workspace.open(goodPath).then(editor =>
-        lint(editor).then(messages =>
-          expect(messages.length).toEqual(0),
-        ),
-      ),
-    ),
-  );
+  it('finds nothing wrong with a valid file', async () => {
+    const editor = await atom.workspace.open(goodPath);
+    const messages = await lint(editor);
 
-  it('handles an empty file', () =>
-    waitsForPromise(() =>
-      atom.workspace.open(emptyPath).then(editor =>
-        lint(editor).then(messages =>
-          expect(messages.length).toEqual(0),
-        ),
-      ),
-    ),
-  );
+    expect(messages.length).toEqual(0);
+  });
 
-  it('respects .csslintrc configurations at the project root', () => {
+  it('handles an empty file', async () => {
+    const editor = await atom.workspace.open(emptyPath);
+    const messages = await lint(editor);
+
+    expect(messages.length).toEqual(0);
+  });
+
+  it('respects .csslintrc configurations at the project root', async () => {
     atom.project.addPath(projectPath);
-    waitsForPromise(() =>
-      atom.workspace.open(projectBadPath).then(editor =>
-        lint(editor).then((messages) => {
-          expect(messages[0].type).toBeDefined();
-          expect(messages[0].type).toEqual('Error');
-          expect(messages[0].text).toBeDefined();
-          expect(messages[0].text).toEqual('Rule is empty.');
-        }),
-      ),
-    );
+    const editor = await atom.workspace.open(projectBadPath);
+    const messages = await lint(editor);
+
+    expect(messages.length).toBe(1);
+    expect(messages[0].type).toBeDefined();
+    expect(messages[0].type).toEqual('Error');
+    expect(messages[0].text).toBeDefined();
+    expect(messages[0].text).toEqual('Rule is empty.');
   });
 });
