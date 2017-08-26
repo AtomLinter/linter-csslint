@@ -1,11 +1,27 @@
 # Change Log
 
+## [v2.0.0](https://github.com/AtomLinter/linter-csslint/tree/v2.0.0) (2017-08-26)
+[Full Changelog](https://github.com/AtomLinter/linter-csslint/compare/v1.3.4...v2.0.0)
+
+**Implemented enhancements:**
+
+- Remove dependency on custom fork of CSSLint [\#91](https://github.com/AtomLinter/linter-csslint/issues/91)
+- Package Loading slow [\#67](https://github.com/AtomLinter/linter-csslint/issues/67)
+- Move to using mainline CSSLint [\#170](https://github.com/AtomLinter/linter-csslint/pull/170) ([Arcanemagus](https://github.com/Arcanemagus))
+- Update atom-linter to version 10.0.0 🚀 [\#164](https://github.com/AtomLinter/linter-csslint/pull/164) ([greenkeeper[bot]](https://github.com/apps/greenkeeper))
+
+**Fixed bugs:**
+
+- Error running CSSLint [\#166](https://github.com/AtomLinter/linter-csslint/issues/166)
+- Error: Process execution timed out [\#105](https://github.com/AtomLinter/linter-csslint/issues/105)
+- Move to using mainline CSSLint [\#170](https://github.com/AtomLinter/linter-csslint/pull/170) ([Arcanemagus](https://github.com/Arcanemagus))
+
 ## [v1.3.4](https://github.com/AtomLinter/linter-csslint/tree/v1.3.4) (2017-02-21)
 [Full Changelog](https://github.com/AtomLinter/linter-csslint/compare/v1.3.3...v1.3.4)
 
 **Implemented enhancements:**
 
-- Update dependencies to enable Greenkeeper 🌴 [\#154](https://github.com/AtomLinter/linter-csslint/pull/154) ([greenkeeper[bot]](https://github.com/integration/greenkeeper))
+- Update dependencies to enable Greenkeeper 🌴 [\#154](https://github.com/AtomLinter/linter-csslint/pull/154) ([greenkeeper[bot]](https://github.com/apps/greenkeeper))
 
 **Fixed bugs:**
 
