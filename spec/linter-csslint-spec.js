@@ -6,7 +6,7 @@ import { it, fit, wait, beforeEach, afterEach } from 'jasmine-fix';
 import linterCsslint from '../lib/main';
 
 const linterProvider = linterCsslint.provideLinter();
-const lint = linterProvider.lint;
+const { lint } = linterProvider;
 
 const badPath = path.join(__dirname, 'fixtures', 'bad.css');
 const goodPath = path.join(__dirname, 'fixtures', 'good.css');
