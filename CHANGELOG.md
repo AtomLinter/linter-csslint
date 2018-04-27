@@ -1,3 +1,11 @@
+<a name="2.0.1"></a>
+## [2.0.1](https://github.com/AtomLinter/linter-csslint/compare/v2.0.0...v2.0.1) (2018-04-27)
+
+
+### Bug Fixes
+
+* error on CSSLint stderr ([759f7c2](https://github.com/AtomLinter/linter-csslint/commit/759f7c2)), closes [#181](https://github.com/AtomLinter/linter-csslint/issues/181) [#189](https://github.com/AtomLinter/linter-csslint/issues/189)
+
 # Change Log
 
 ## [v2.0.0](https://github.com/AtomLinter/linter-csslint/tree/v2.0.0) (2017-08-26)
