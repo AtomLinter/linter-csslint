@@ -9,7 +9,10 @@
   "main": "./lib/main",
   "version": "2.0.0",
   "description": "Lint CSS on the fly, using csslint",
-  "repository": "https://github.com/AtomLinter/linter-csslint",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AtomLinter/linter-csslint.git"
+  },
   "license": "MIT",
   "private": true,
   "configSchema": {
