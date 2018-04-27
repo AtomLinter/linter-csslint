@@ -1,6 +1,7 @@
 ### Project specific config ###
 language: node_js
 node_js: lts/*
+install: skip
 os: linux
 
 jobs:
@@ -21,7 +22,7 @@ jobs:
     - stage: release
       # Since the deploy needs APM, currently the simplest method is to run
       # build-package.sh, which requires the specs to pass.
-      before_script:
+      before_deploy:
         - export PATH=${PATH}:${HOME}/atom/usr/bin/
       deploy:
         provider: script
@@ -30,7 +31,7 @@ jobs:
           - npx semantic-release
 
 ### Generic setup follows ###
-install:
+script:
   - curl -s -O https://raw.githubusercontent.com/atom/ci/master/build-package.sh
   - chmod u+x build-package.sh
   - "./build-package.sh"
