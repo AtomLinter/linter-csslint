@@ -1,3 +1,10 @@
+## [2.0.2](https://github.com/AtomLinter/linter-csslint/compare/v2.0.1...v2.0.2) (2018-12-13)
+
+
+### Bug Fixes
+
+* remove HTML from supported types ([ce69eec](https://github.com/AtomLinter/linter-csslint/commit/ce69eec)), closes [#207](https://github.com/AtomLinter/linter-csslint/issues/207)
+
 <a name="2.0.1"></a>
 ## [2.0.1](https://github.com/AtomLinter/linter-csslint/compare/v2.0.0...v2.0.1) (2018-04-27)
 
