@@ -1,3 +1,10 @@
+## [2.0.4](https://github.com/AtomLinter/linter-csslint/compare/v2.0.3...v2.0.4) (2019-02-07)
+
+
+### Bug Fixes
+
+* handle superseded runs ([458b0b0](https://github.com/AtomLinter/linter-csslint/commit/458b0b0)), closes [#214](https://github.com/AtomLinter/linter-csslint/issues/214)
+
 ## [2.0.3](https://github.com/AtomLinter/linter-csslint/compare/v2.0.2...v2.0.3) (2019-01-23)
 
 
