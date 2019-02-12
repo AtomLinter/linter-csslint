@@ -36,7 +36,7 @@
     "@commitlint/config-conventional": "7.5.0",
     "@commitlint/travis-cli": "7.5.2",
     "@semantic-release/apm-config": "6.0.1",
-    "husky": "0.14.3",
+    "husky": "1.3.1",
     "semantic-release": "15.13.3",
     "eslint": "4.19.1",
     "eslint-config-airbnb-base": "12.1.0",
@@ -47,9 +47,13 @@
     "linter:2.0.0"
   ],
   "scripts": {
-    "commitmsg": "commitlint -e $GIT_PARAMS",
     "lint": "eslint .",
     "test": "apm test"
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
   },
   "eslintConfig": {
     "extends": "airbnb-base",
