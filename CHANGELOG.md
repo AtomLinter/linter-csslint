@@ -1,3 +1,10 @@
+## [2.0.5](https://github.com/AtomLinter/linter-csslint/compare/v2.0.4...v2.0.5) (2019-02-13)
+
+
+### Bug Fixes
+
+* **deps:** update dependency fs-plus to v3.1.1 ([bf45d93](https://github.com/AtomLinter/linter-csslint/commit/bf45d93))
+
 ## [2.0.4](https://github.com/AtomLinter/linter-csslint/compare/v2.0.3...v2.0.4) (2019-02-07)
 
 
