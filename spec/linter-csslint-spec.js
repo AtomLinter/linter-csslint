@@ -1,8 +1,10 @@
 'use babel';
 
 import * as path from 'path';
-// eslint-disable-next-line no-unused-vars
-import { it, fit, wait, beforeEach, afterEach } from 'jasmine-fix';
+import {
+  // eslint-disable-next-line no-unused-vars
+  it, fit, wait, beforeEach, afterEach,
+} from 'jasmine-fix';
 import linterCsslint from '../lib/main';
 
 const linterProvider = linterCsslint.provideLinter();
@@ -15,8 +17,8 @@ const emptyPath = path.join(__dirname, 'fixtures', 'empty.css');
 const projectPath = path.join(__dirname, 'fixtures', 'project');
 const projectBadPath = path.join(projectPath, 'files', 'badWC.css');
 
-const emptyRulesDetails = 'Rules without any properties specified should be ' +
-  'removed. (empty-rules)';
+const emptyRulesDetails = 'Rules without any properties specified should be '
+  + 'removed. (empty-rules)';
 const emptRulesUrl = 'https://github.com/CSSLint/csslint/wiki/Disallow-empty-rules';
 
 describe('The CSSLint provider for Linter', () => {
