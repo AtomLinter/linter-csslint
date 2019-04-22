@@ -1,3 +1,10 @@
+## [2.0.6](https://github.com/AtomLinter/linter-csslint/compare/v2.0.5...v2.0.6) (2019-04-22)
+
+
+### Bug Fixes
+
+* **deps:** update dependency atom-package-deps to v5.1.0 ([b13377c](https://github.com/AtomLinter/linter-csslint/commit/b13377c))
+
 ## [2.0.5](https://github.com/AtomLinter/linter-csslint/compare/v2.0.4...v2.0.5) (2019-02-13)
 
 
